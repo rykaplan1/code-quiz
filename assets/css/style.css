@@ -1,0 +1,14 @@
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#start-screen {
+  text-align: center;
+}
+
+#question-screen, #results-screen, #scores-screen {
+  margin-left: 35%;
+}
+
