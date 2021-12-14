@@ -10,29 +10,26 @@
   </head>
   <body>
     <header>
-      <button id="view-scores">View High Scores</button>
+      <div id="view-scores">View High Scores</div>
       <p>Time: <span id="time"></span></p>
     </header>
     <main>
       <section id="start-screen">
         <h1>Coding Quiz Challenge</h1>
         <p>Try to answer the following code-related questions within the time limit. Keep in mind that incorrect answers will penalize your score/time by ten seconds!</p>
-        <button id="start-button">Start Quiz</button>
+        <div class ="button" id="start-button">Start Quiz</div>
       </section>
       <section id="question-screen">
         <h1 id="question">Question</h1>
-        <button class="answer" id="answer-one">Answer 1</button>
-        <br>
-        <button class="answer" id="answer-two">Answer 2</button>
-        <br>
-        <button class="answer" id="answer-three">Answer 3</button>
-        <br>
-        <button class="answer" id="answer-four">Answer 4</button>
+        <div class="answer button" id="answer-one">Answer 1</div>
+        <div class="answer button" id="answer-two">Answer 2</div>
+        <div class="answer button" id="answer-three">Answer 3</div>
+        <div class="answer button" id="answer-four">Answer 4</div>
       </section>
       <section id="results-screen">
         <h1>All done!</h1>
         <p>Your final score is <span id="score"></span></p>
-        <label>Enter initials:</label><input type="text" name="initials" id="initials"/><button id="submit">Submit</button>
+        <label>Enter initials: </label><input type="text" name="initials" id="initials"/><div class ="button" id="submit">Submit</div>
       </section>
       <!--This div is here so that it displays below whichever of the question section or the results section is visibile.-->
       <div id="judgment"></div>
@@ -41,8 +38,8 @@
         <h1>High Scores</h1>
         <ol id="score-list">
         </ol>
-        <button id="go-back">Go Back</button>
-        <button id="clear-scores">Clear High Scores</button>
+        <div class ="button" id="go-back">Go Back</div>
+        <div class ="button" id="clear-scores">Clear High Scores</div>
       </section>
     </main>
     <script src="assets/js/script.js"></script>

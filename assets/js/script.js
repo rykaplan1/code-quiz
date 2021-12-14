@@ -16,7 +16,7 @@ const questions = [
     answerText: ["quotes", "curly brackets", "parentheses", "square brackets"],
     correctAnswer: "parentheses"
   }, {
-    questionText: "Arrays in JavaScript can be used to store ___",
+    questionText: "Arrays in JavaScript can be used to store ___.",
     answerText: ["numbers and strings", "other arrays", "booleans", "all of the above"],
     correctAnswer: "all of the above"
   }, {
@@ -133,12 +133,14 @@ const goToResults = () => {
 
 //Event Listeners
 viewScores.addEventListener('click', function() {
-  showHighScores();
+  if (currentScreen !== scoresScreen) {
+    showHighScores();
+  }
 });
 
 startButton.addEventListener('click', function() {
   startScreen.style.display = 'none';
-  questionScreen.style.display = 'block';
+  questionScreen.style.display = 'inline-flex';
   currentScreen = questionScreen;
   currentQuestion = 0;
   nextQuestion = 1;
@@ -194,6 +196,9 @@ goBack.addEventListener('click', function() {
   scoreList.innerHTML = '';
   if (previousScreen === resultsScreen) {
     init();
+  } else if (previousScreen === questionScreen) {
+    previousScreen.style.display = 'inline-flex';
+    currentScreen = previousScreen;
   } else {
     previousScreen.style.display = 'block';
     currentScreen = previousScreen;
