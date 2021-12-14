@@ -89,6 +89,9 @@ li {
 
 #question-screen, #results-screen, #judgment, #scores-screen {
   margin-left: 35%;
+}
+
+#question-screen, #judgment, #scores-screen {
   margin-right: 35%;
 }
 

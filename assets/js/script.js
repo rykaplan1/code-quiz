@@ -93,7 +93,7 @@ const showHighScores = (scoreSubmitted = false) => {
   }
   storedScores = JSON.parse(localStorage.getItem('Scores'));
   if (scoreSubmitted) {
-    storedScores.push({name: initials.value, score: timeCounter});
+    storedScores.push({name: initials.value.toUpperCase(), score: timeCounter});
     scoreSubmitted = false;
   }
   storedScores.sort((a, b) => b.score - a.score);
@@ -187,7 +187,11 @@ Array.from(answers).forEach((answer) => {
 });
 
 submit.addEventListener('click', function() {
-  showHighScores(true);
+  if (initials.value.length <= 3 && /^[a-zA-Z]+$/.test(initials.value)) {
+    showHighScores(true);
+  } else {
+    alert("Please enter only letters or no more than three letters.");
+  }
   initials.value = null;
 });
 
