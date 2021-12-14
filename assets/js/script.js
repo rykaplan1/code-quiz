@@ -149,6 +149,7 @@ startButton.addEventListener('click', function() {
       time.innerText= timeCounter;
     } else {
       clearInterval(timeInterval);
+      goToResults();
     }
   }, 1000);
 });
@@ -159,8 +160,13 @@ Array.from(answers).forEach((answer) => {
     if (isCorrect) {
       judgment.innerText = "Correct!";
     } else {
-      timeCounter -= 10;
-      time.innerText = timeCounter;
+      if (timeCounter > 0) {
+        timeCounter -= 10;
+        if (timeCounter < 0) {
+          timeCounter = 0;
+        }
+        time.innerText = timeCounter;
+      }
       judgment.innerText = "Wrong!";
     }
     judgment.style.display = 'block';
