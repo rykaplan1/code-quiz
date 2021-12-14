@@ -124,6 +124,13 @@ const checkAnswer = (answerText) => {
   isCorrect = (answerText === currentCorrectAnswer);
 }
 
+const goToResults = () => {
+  score.innerText = timeCounter;
+  questionScreen.style.display = 'none';
+  resultsScreen.style.display = 'block'; 
+  currentScreen = resultsScreen;
+};
+
 //Event Listeners
 viewScores.addEventListener('click', function() {
   showHighScores();
@@ -136,6 +143,14 @@ startButton.addEventListener('click', function() {
   currentQuestion = 0;
   nextQuestion = 1;
   renderQuestion(questions[currentQuestion]);
+  timeInterval = setInterval(function() {
+    if (timeCounter > 0) {
+      timeCounter--;
+      time.innerText= timeCounter;
+    } else {
+      clearInterval(timeInterval);
+    }
+  }, 1000);
 });
 
 Array.from(answers).forEach((answer) => {
@@ -157,10 +172,8 @@ Array.from(answers).forEach((answer) => {
       currentQuestion = nextQuestion;
       nextQuestion = currentQuestion + 1;
     } else {
-      score.innerText = timeCounter;
-      questionScreen.style.display = 'none';
-      resultsScreen.style.display = 'block'; 
-      currentScreen = resultsScreen;
+      clearInterval(timeInterval);
+      goToResults();
     }
   })
 });
