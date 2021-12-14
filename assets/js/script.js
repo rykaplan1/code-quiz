@@ -97,7 +97,10 @@ const showHighScores = (scoreSubmitted = false) => {
     scoreSubmitted = false;
   }
   storedScores.sort((a, b) => b.score - a.score);
-  for (i = 0; i < storedScores.length; i++) {
+  for (i = 0; i < 10; i++) {
+    if (storedScores.length <= i) {
+      break;
+    }
     const player = storedScores[i];
     scoreList.innerHTML += `<li>${player.name} - ${player.score}</li>`;
   }
