@@ -27,7 +27,7 @@ THEN I can save my initials and my score
 N/A
 
 ## Usage
-This webpage can be accessed at: https://rykaplan1.github.io/coding-quiz
+This webpage can be accessed at: https://rykaplan1.github.io/code-quiz
 
 ![A screenshot of the start screen](assets/images/Start-Screenshot.png)
 
